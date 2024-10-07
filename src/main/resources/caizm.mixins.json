@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "cn.trollaura.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "TickMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "InGameHUDDraw",
+    "KeyboardMixin",
+    "MixinMinecraftClient",
+    "MixinWindow"
+  ]
+}

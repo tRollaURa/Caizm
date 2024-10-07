@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "caizm",
+	"version": "${version}",
+	"name": "CaizM",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"trollaura"
+	],
+	"contact": {
+		"homepage": "https://shop.trollaura.top/",
+		"sources": "https://github.com/tRollaURa/Caizm"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/caizm/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "cn.trollaura.CaizM",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"caizm.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.5",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
