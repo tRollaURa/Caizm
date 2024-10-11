@@ -1,5 +1,6 @@
 package cn.trollaura
 
+import cn.trollaura.modules.ArrayList
 import cn.trollaura.modules.ClickGui
 import cn.trollaura.modules.Sprint
 import cn.trollaura.modules.Watermark
@@ -14,6 +15,7 @@ object ModuleManager {
         addModule(Sprint)
         addModule(Watermark)
         addModule(ClickGui)
+        addModule(ArrayList)
     }
 
 

@@ -12,6 +12,7 @@
     "InGameHUDDraw",
     "KeyboardMixin",
     "MixinMinecraftClient",
+    "MixinNetworkHandler",
     "MixinWindow"
   ]
 }
