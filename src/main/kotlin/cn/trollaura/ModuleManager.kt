@@ -1,9 +1,6 @@
 package cn.trollaura
 
-import cn.trollaura.modules.ArrayList
-import cn.trollaura.modules.ClickGui
-import cn.trollaura.modules.Sprint
-import cn.trollaura.modules.Watermark
+import cn.trollaura.modules.*
 import cn.trollaura.value.AbstractSetting
 import java.util.concurrent.CopyOnWriteArrayList
 
@@ -16,6 +13,7 @@ object ModuleManager {
         addModule(Watermark)
         addModule(ClickGui)
         addModule(ArrayList)
+        addModule(NoClickDelay)
     }
 
 

@@ -6,6 +6,9 @@ import cn.trollaura.event.events.ChatEvent
 import cn.trollaura.event.events.DrawEvent
 import cn.trollaura.event.events.KeyboardEvent
 import cn.trollaura.event.events.TickEvent
+import net.minecraft.client.render.entity.model.ShieldEntityModel
+import net.minecraft.client.render.item.ItemRenderer
+import net.minecraft.item.ShieldItem
 import net.minecraft.network.message.SentMessage.Chat
 
 object EventManager {
