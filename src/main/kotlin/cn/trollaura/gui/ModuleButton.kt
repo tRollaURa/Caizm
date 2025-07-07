@@ -12,7 +12,7 @@ class ModuleButton(var module: Module,var x: Int,var y: Int) {
 
     fun render(context: DrawContext?, mouseX: Int, mouseY: Int, delta: Float) {
         context!!.fill(x,y,x + width,y + height,-1)
-        context.fill(x,y,x + width,y + if(module.enabled) height else 0,Color(255).rgb)
+        context.fill(x,y,x + width,y + if(module.enabled) height else 0,Color(240).rgb)
         context.drawText(MinecraftClient.getInstance().textRenderer,module.name,x + 3,y + 3,-1,true)
     }
 
