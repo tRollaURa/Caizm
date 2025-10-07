@@ -1,5 +1,6 @@
 package cn.trollaura.mixin;
 
+import cn.trollaura.config.ConfigManager;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.Window;
 import org.spongepowered.asm.mixin.Final;
@@ -8,6 +9,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(MinecraftClient.class)
 public class MixinMinecraftClient {
@@ -19,6 +21,11 @@ public class MixinMinecraftClient {
         this.window.setTitle("迷你世界");
     }
 
+
+    @Inject(method = "scheduleStop", at = @At(value = "HEAD"))
+    public void stop(CallbackInfo ci) {
+        ConfigManager.INSTANCE.saveDefault();
+    }
 
 
 }
