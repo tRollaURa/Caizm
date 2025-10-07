@@ -15,7 +15,7 @@ object CaizM : ModInitializer {
 	override fun onInitialize() {
 		EventManager.init()
 		ModuleManager
-		ConfigManager.loadDefault()
+		ConfigManager.load("Gunmu.cfg")
 		screen = ScreenGui
 
 	}

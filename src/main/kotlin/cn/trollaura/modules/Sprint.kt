@@ -18,7 +18,7 @@ object Sprint: Module("Sprint","sprint.",Category.CLIENT) {
         if ((mc.player != null && mc.world != null )) {
             mc.player!!.isSprinting = true
         }
-
+        if(test.value) println("Sunxiaochuan")
 
     }
 

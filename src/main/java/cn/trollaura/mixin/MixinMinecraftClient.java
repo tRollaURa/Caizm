@@ -24,7 +24,7 @@ public class MixinMinecraftClient {
 
     @Inject(method = "scheduleStop", at = @At(value = "HEAD"))
     public void stop(CallbackInfo ci) {
-        ConfigManager.INSTANCE.saveDefault();
+        ConfigManager.INSTANCE.save("Gunmu.cfg");
     }
 
 
