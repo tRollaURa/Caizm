@@ -19,6 +19,7 @@ object Sprint: Module("Sprint","sprint.",Category.CLIENT) {
             mc.player!!.isSprinting = true
         }
 
+
     }
 
 }

@@ -14,6 +14,7 @@ object ModuleManager {
         addModule(ClickGui)
         addModule(ArrayList)
         addModule(NoClickDelay)
+        addModule(FastPlace)
     }
 
 

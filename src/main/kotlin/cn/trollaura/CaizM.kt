@@ -1,5 +1,6 @@
 package cn.trollaura
 
+import cn.trollaura.config.ConfigManager
 import cn.trollaura.event.EventBus
 import cn.trollaura.event.EventManager
 import cn.trollaura.gui.ScreenGui
@@ -14,7 +15,9 @@ object CaizM : ModInitializer {
 	override fun onInitialize() {
 		EventManager.init()
 		ModuleManager
+		ConfigManager.loadDefault()
 		screen = ScreenGui
 
 	}
+
 }
