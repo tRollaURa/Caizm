@@ -1,6 +1,7 @@
 package cn.trollaura
 
 import cn.trollaura.event.events.DrawEvent
+import cn.trollaura.notification.NotificationManager
 import cn.trollaura.value.AbstractSetting
 import net.minecraft.client.MinecraftClient
 import java.util.concurrent.CopyOnWriteArrayList
@@ -30,8 +31,10 @@ open class Module(var name: String,var description: String,var category: Categor
     }
     fun toggle() {
         if (enabled) {
+            NotificationManager.addNotification(3000,"$name has disabled.")
             disable()
         }else {
+            NotificationManager.addNotification(3000,"$name has enabled.")
             enable()
         }
     }

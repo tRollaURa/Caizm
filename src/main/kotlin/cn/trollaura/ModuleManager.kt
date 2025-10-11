@@ -6,27 +6,33 @@ import java.util.concurrent.CopyOnWriteArrayList
 
 object ModuleManager {
     var modules = CopyOnWriteArrayList<Module>()
+    val settingsCache = mutableMapOf<Class<*>,MutableList<AbstractSetting<*>>>()
 
 
     init {
-        addModule(Sprint)
-        addModule(Watermark)
-        addModule(ClickGui)
-        addModule(ArrayList)
-        addModule(NoClickDelay)
-        addModule(FastPlace)
+        addModules(FastPlace,
+            Sprint,
+            Watermark,
+            ClickGui,
+            ArrayList,
+            NoClickDelay,
+            Notification)
     }
 
 
-    fun addModule(module: Module) {
-        module::class.java.declaredFields.forEach {
-            it.isAccessible = true
-            val obj = it.get(module)
-            if(obj is AbstractSetting<*>) {
-                module.settings.add(obj)
+
+    fun addModules(vararg moduleList: Module) {
+        moduleList.forEach {
+            val clazz = it::class.java
+            val settings = settingsCache.getOrPut(clazz) {
+                clazz.declaredFields.mapNotNull { i ->
+                    i.isAccessible = true
+                    i.get(it) as? AbstractSetting<*>
+                }.toMutableList()
             }
+            it.settings.addAll(settings)
         }
-        modules.add(module)
+        modules.addAll(moduleList)
     }
 
 
