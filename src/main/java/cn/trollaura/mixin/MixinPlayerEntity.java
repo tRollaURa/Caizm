@@ -12,7 +12,7 @@ public class MixinPlayerEntity {
     @Inject(method = "getAttackCooldownProgressPerTick",at = @At("HEAD"), cancellable = true)
     public void modifyAttackCooldown(CallbackInfoReturnable<Float> cir) {
         if(NoClickDelay.INSTANCE.getEnabled()) {
-            cir.setReturnValue(0.0F);
+            cir.setReturnValue(1.0F);
         }
     }
 }

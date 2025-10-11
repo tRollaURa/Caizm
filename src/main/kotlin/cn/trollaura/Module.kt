@@ -31,10 +31,10 @@ open class Module(var name: String,var description: String,var category: Categor
     }
     fun toggle() {
         if (enabled) {
-            NotificationManager.addNotification(3000,"$name has disabled.")
+            NotificationManager.addNotification(3000,"$name has been disabled.")
             disable()
         }else {
-            NotificationManager.addNotification(3000,"$name has enabled.")
+            NotificationManager.addNotification(3000,"$name has been enabled.")
             enable()
         }
     }
